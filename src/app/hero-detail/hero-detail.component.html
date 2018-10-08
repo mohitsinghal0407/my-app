@@ -1,14 +1,14 @@
 <p>
   hero-detail works!
 </p>
-<div *ngIf="student">
-	<h2>{{student.name | uppercase}} Details</h2>
-	<div><span>id: </span>{{student.id}}</div>
-	<div><span>Roll: </span>{{student.roll}}</div>
+<div *ngIf="student_variable">
+	<h2>{{student_variable.name | uppercase}} Details</h2>
+	<div><span>id: </span>{{student_variable.id}}</div>
+	<div><span>Roll: </span>{{student_variable.roll}}</div>
 	<div>
-	  <label>name:{{student.name}}
+	  <label>name:{{student_variable.name}}
 		</label>
 		<br />
-		<input *ngIf="student" [(ngModel)]="student.name" placeholder="name">
+		<input *ngIf="student_variable" [(ngModel)]="student_variable.name" placeholder="name">
 	</div>
 </div>
