@@ -1,12 +1,6 @@
-/* Defining object here */
-export class Student {
-  id: number;
-  name: string;
-  roll: number;
-}
+import { Student } from './hero';
 
-
-export const MoreStudents: Student[] = [
+export const Students: Student[] = [
   { id: 11, name: 'Mr. Nice', roll: 111 },
   { id: 12, name: 'Narco', roll: 112 },
   { id: 13, name: 'Bombasto', roll: 113 },

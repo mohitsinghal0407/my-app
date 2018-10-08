@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Student } from '../hero';
+import { Student, MoreStudents } from '../hero';
 
 @Component({
   selector: 'app-heroes',
@@ -20,12 +20,21 @@ export class HeroesComponent implements OnInit {
 
 	group_variable: Student = {
 		id: 1,
-		name: 'Windstorm'
+		name: 'Windstorm',
+		roll: 145824
 	};
+
+	all_students = MoreStudents;
 
 	constructor() { }
 
 	ngOnInit()
 	{
+	}
+
+	selectedValue: Student;
+
+	onSelect(construct_variable: Student): void {
+	  this.selectedValue = construct_variable;
 	}
 }

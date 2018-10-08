@@ -1,0 +1,14 @@
+<p>
+  hero-detail works!
+</p>
+<div *ngIf="student">
+	<h2>{{student.name | uppercase}} Details</h2>
+	<div><span>id: </span>{{student.id}}</div>
+	<div><span>Roll: </span>{{student.roll}}</div>
+	<div>
+	  <label>name:{{student.name}}
+		</label>
+		<br />
+		<input *ngIf="student" [(ngModel)]="student.name" placeholder="name">
+	</div>
+</div>
