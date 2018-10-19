@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Student, MoreStudents } from '../hero';
+import { Student } from '../hero';
+import { MoreStudents } from '../hero';
+import { HeroService } from '../services/hero.service';
 
 @Component({
   selector: 'app-heroes',
@@ -24,17 +26,36 @@ export class HeroesComponent implements OnInit {
 		roll: 145824
 	};
 
-	all_students = MoreStudents;
+	all_students: Student[];
+	
+	all_students_via_file = MoreStudents;
 
-	constructor() { }
+	all_students_via_obserable_service: Student[];
+
+	
+
+	constructor(private heroService: HeroService) { }
+
+	getAllStudents(): void {
+		this.all_students = this.heroService.getStudents();
+	}
+
+	getAllStudentsHTTP(): void {
+	  	this.heroService.getStudentsthroughhttp()
+	      .subscribe(heroes => {     
+	      	// heros is dynamic variable in which i am getting response from getStudentsthroughhttp function.
+	      	this.all_students_via_obserable_service = heroes
+	      });
+	}
 
 	ngOnInit()
 	{
+		this.getAllStudents();
 	}
 
 	selectedValue: Student;
 
 	onSelect(construct_variable: Student): void {
-	  this.selectedValue = construct_variable;
+		this.selectedValue = construct_variable;
 	}
 }

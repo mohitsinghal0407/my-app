@@ -5,7 +5,21 @@
   	</label>
 </div>
 
-<li *ngFor="let student of all_students" (click)="onSelect(student)" class="hello" [class.selected]="student === selectedValue" >
+<li *ngFor="let student of all_students" (click)="onSelect(student)"  [class.selected]="student === selectedValue" >
+	{{ student.name | uppercase}}
+</li>
+
+<h1>All Data comes through Services: </h1>
+
+
+<li *ngFor="let student of all_students_via_file" (click)="onSelect(student)"  [class.selected]="student === selectedValue" >
+	{{ student.name | uppercase}}
+</li>
+
+<h1>All Data comes through Services via obserable: </h1>
+
+
+<li *ngFor="let student of all_students_via_obserable_service" (click)="onSelect(student)"  [class.selected]="student === selectedValue" >
 	{{ student.name | uppercase}}
 </li>
 
