@@ -42,7 +42,8 @@ export class HeroesComponent implements OnInit {
 
 	getAllStudentsHTTP(): void {
 	  	this.heroService.getStudentsthroughhttp()
-	      .subscribe(heroes => {     
+	      .subscribe(heroes => {    
+	      // alert(); 
 	      	// heros is dynamic variable in which i am getting response from getStudentsthroughhttp function.
 	      	this.all_students_via_obserable_service = heroes
 	      });
@@ -51,6 +52,7 @@ export class HeroesComponent implements OnInit {
 	ngOnInit()
 	{
 		this.getAllStudents();
+		this.getAllStudentsHTTP();
 	}
 
 	selectedValue: Student;
