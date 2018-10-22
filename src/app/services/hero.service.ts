@@ -13,14 +13,12 @@ export class HeroService {
 
   	getStudents(): Student[] 
   	{
-		return MoreStudents;
-	}
+		  return MoreStudents;
+	  }
 
-	getStudentsthroughhttp(): Observable<Student[]> 
+	  getStudentsthroughhttp(): Observable<Student[]> 
   	{
   		this.messageService.add('HeroService: fetched heroes');
-  		
   		return of(MoreStudents);
-	//	return MoreStudents;
-	}
+	  }
 }
